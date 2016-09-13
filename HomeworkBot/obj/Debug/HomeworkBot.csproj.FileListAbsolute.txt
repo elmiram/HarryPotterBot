@@ -1,0 +1,41 @@
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Bot Application1.dll.config
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Bot Application1.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Bot Application1.pdb
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Autofac.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Chronic.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Microsoft.Bot.Builder.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Microsoft.Bot.Connector.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Microsoft.ProjectOxford.Linguistics.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Microsoft.Rest.ClientRuntime.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Microsoft.WindowsAzure.Configuration.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Newtonsoft.Json.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\System.IdentityModel.Tokens.Jwt.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\System.Net.Http.Formatting.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\System.Web.Http.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\System.Web.Http.WebHost.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Microsoft.ProjectOxford.Linguistics.pdb
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Autofac.xml
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Microsoft.Bot.Builder.xml
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Microsoft.Bot.Connector.xml
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Microsoft.IdentityModel.Protocol.Extensions.pdb
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Microsoft.Rest.ClientRuntime.xml
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Microsoft.WindowsAzure.Configuration.xml
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\Newtonsoft.Json.xml
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\System.IdentityModel.Tokens.Jwt.pdb
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\System.IdentityModel.Tokens.Jwt.xml
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\System.Net.Http.Formatting.xml
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\System.Web.Http.xml
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\System.Web.Http.WebHost.xml
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\ar\Microsoft.Bot.Builder.resources.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\en\Microsoft.Bot.Builder.resources.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\es\Microsoft.Bot.Builder.resources.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\fa\Microsoft.Bot.Builder.resources.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\fr\Microsoft.Bot.Builder.resources.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\ja\Microsoft.Bot.Builder.resources.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\ru\Microsoft.Bot.Builder.resources.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\bin\zh-hans\Microsoft.Bot.Builder.resources.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\obj\Debug\HomeworkBot.csprojResolveAssemblyReference.cache
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\obj\Debug\Bot Application1.dll
+d:\документы\документы\visual studio 2015\Projects\HomeworkBot\HomeworkBot\obj\Debug\Bot Application1.pdb
