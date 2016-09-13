@@ -13,6 +13,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using Microsoft.Bot.Connector;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace HomeworkBot
 {
@@ -36,7 +37,7 @@ namespace HomeworkBot
                 var Req = new AnalyzeTextRequest();
                 Req.Language = "en";
                 Req.Text = activity.Text;
-                Req.AnalyzerIds = new Guid[] { Analyzers[0].Id };
+                Req.AnalyzerIds = new Guid[] { Analyzers[0].Id, Analyzers[2].Id };
                 
                 var Res = await Client.AnalyzeTextAsync(Req);
                 var analyzerResponse = Res[0].Result.ToString();
@@ -45,16 +46,21 @@ namespace HomeworkBot
                 Activity reply = activity.CreateReply($"{analyzerResponse}");
                 await connector.Conversations.ReplyToActivityAsync(reply);
 
-
                 Regex ItemRegex = new Regex("\"(.*?)\"", RegexOptions.Compiled);
+                Regex RawTokenRegex = new Regex("\"RawToken\": \"(.*?)\"", RegexOptions.Compiled);
                 var posWords = new POSDict();
 
                 string resp = "";
-                foreach (Match ItemMatch in ItemRegex.Matches(analyzerResponse))
+                MatchCollection messagePOS = ItemRegex.Matches(analyzerResponse);
+                MatchCollection messageRaw = RawTokenRegex.Matches(Res[1].Result.ToString());
+
+                for (var i = 0; i < messagePOS.Count; i++)
                 {
-                    resp += posWords.getWord(ItemMatch.Groups[1].ToString()) + ' ';
+                    bool RawTokenCapitalized = char.IsUpper(messageRaw[i].Groups[1].ToString()[0]);
+                    resp += posWords.getWord(messagePOS[i].Groups[1].ToString(), RawTokenCapitalized) + ' ';
                 }
                 
+                // todo  
                 Activity reply2 = activity.CreateReply($"{resp}");
                 await connector.Conversations.ReplyToActivityAsync(reply2);
                 
@@ -101,8 +107,7 @@ namespace HomeworkBot
     {
 
         public Dictionary<string, string[]> dict = CreateDictionary();
-
-        //public POSDict() { Dictionary<string, string[]>  dict = CreateDictionary();}
+        
 
         static Dictionary<string, string[]> CreateDictionary()
         {
@@ -123,12 +128,47 @@ namespace HomeworkBot
             return wordDictionary;
         }
 
-        public string getWord(string pos)
+        public string getWord(string pos, bool IsCap)
         {
+            if (dict.ContainsKey(pos))
+            {
+                var word = dict[pos].PickRandom();
+                if (IsCap == true)
+                {
+                    word = FirstCharToUpper(word);
+                }
+                return word;
+            }
+            
+            return string.Empty;
+            
+        }
 
-            Random rnd = new Random();
-            int start2 = rnd.Next(0, dict[pos].Length);
-            return dict[pos][start2];
+        public static string FirstCharToUpper(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                return string.Empty;
+            }
+            return input.First().ToString().ToUpper() + String.Join("", input.Skip(1));
+        }
+    }
+
+    public static class EnumerableExtension
+    {
+        public static T PickRandom<T>(this IEnumerable<T> source)
+        {
+            return source.PickRandom(1).Single();
+        }
+
+        public static IEnumerable<T> PickRandom<T>(this IEnumerable<T> source, int count)
+        {
+            return source.Shuffle().Take(count);
+        }
+
+        public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source)
+        {
+            return source.OrderBy(x => Guid.NewGuid());
         }
     }
 }
