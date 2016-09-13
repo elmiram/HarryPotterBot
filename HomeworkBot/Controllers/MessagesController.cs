@@ -30,39 +30,51 @@ namespace HomeworkBot
             if (activity.Type == ActivityTypes.Message)
             {
                 ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
+                var help = "/help";
 
-                var Client = new LinguisticsClient("ec544bdca14645cf8d6454e8dc180836");
-                var Analyzers = await Client.ListAnalyzersAsync();
-
-                var Req = new AnalyzeTextRequest();
-                Req.Language = "en";
-                Req.Text = activity.Text;
-                Req.AnalyzerIds = new Guid[] { Analyzers[0].Id, Analyzers[2].Id };
-                
-                var Res = await Client.AnalyzeTextAsync(Req);
-                var analyzerResponse = Res[0].Result.ToString();
-
-                // сначала отправляю юзеру разбор по частям речи
-                Activity reply = activity.CreateReply($"{analyzerResponse}");
-                await connector.Conversations.ReplyToActivityAsync(reply);
-
-                Regex ItemRegex = new Regex("\"(.*?)\"", RegexOptions.Compiled);
-                Regex RawTokenRegex = new Regex("\"RawToken\": \"(.*?)\"", RegexOptions.Compiled);
-                var posWords = new POSDict();
-
-                string resp = "";
-                MatchCollection messagePOS = ItemRegex.Matches(analyzerResponse);
-                MatchCollection messageRaw = RawTokenRegex.Matches(Res[1].Result.ToString());
-
-                for (var i = 0; i < messagePOS.Count; i++)
+                if (activity.Text == help)
                 {
-                    bool RawTokenCapitalized = char.IsUpper(messageRaw[i].Groups[1].ToString()[0]);
-                    resp += posWords.getWord(messagePOS[i].Groups[1].ToString(), RawTokenCapitalized) + ' ';
+                    Activity reply3 = activity.CreateReply("Please, read about this bot at http://harrypotterresponsebot.azurewebsites.net/ \n\n\n\nSend your message to the Harry Potter Bot! It will respond with a morphologically similar phrase. \n\n\n\nThe words for phases are taken from Harry Potter series. \n\n\n\nThis bot understands emojis! Try sending :blush: or :heart: =)");
+                    await connector.Conversations.ReplyToActivityAsync(reply3);
                 }
+
+                else
+                {
+                    var Client = new LinguisticsClient("ec544bdca14645cf8d6454e8dc180836");
+                    var Analyzers = await Client.ListAnalyzersAsync();
+
+                    var Req = new AnalyzeTextRequest();
+                    Req.Language = "en";
+                    Req.Text = activity.Text;
+                    Req.AnalyzerIds = new Guid[] { Analyzers[0].Id, Analyzers[2].Id };
+
+                    var Res = await Client.AnalyzeTextAsync(Req);
+                    var analyzerResponse = Res[0].Result.ToString();
+
+                    // сначала отправляю юзеру разбор по частям речи,а он не отправляется
+                    //Activity reply = activity.CreateReply($"{analyzerResponse}");
+                    //await connector.Conversations.ReplyToActivityAsync(reply);
+
+                    Regex ItemRegex = new Regex("\"(.*?)\"", RegexOptions.Compiled);
+                    Regex RawTokenRegex = new Regex("\"RawToken\": \"(.*?)\"", RegexOptions.Compiled);
+                    var posWords = new POSDict();
+
+                    string resp = "";
+                    MatchCollection messagePOS = ItemRegex.Matches(analyzerResponse);
+                    MatchCollection messageRaw = RawTokenRegex.Matches(Res[1].Result.ToString());
+
+                    for (var i = 0; i < messagePOS.Count; i++)
+                    {
+                        bool RawTokenCapitalized = char.IsUpper(messageRaw[i].Groups[1].ToString()[0]);
+                        resp += posWords.getWord(messagePOS[i].Groups[1].ToString(), RawTokenCapitalized) + ' ';
+                    }
+
+                    // todo  
+                    Activity reply2 = activity.CreateReply($"{resp}");
+                    await connector.Conversations.ReplyToActivityAsync(reply2);
+                }
+
                 
-                // todo  
-                Activity reply2 = activity.CreateReply($"{resp}");
-                await connector.Conversations.ReplyToActivityAsync(reply2);
                 
             }
             else
