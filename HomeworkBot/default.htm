@@ -1,12 +1,63 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title></title>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Harry Potter Response Bot</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
-<body style="font-family:'Segoe UI'">
-    <h1>HomeworkBot</h1>
-    <p>Describe your bot here and your terms of use etc.</p>
-    <p>Visit <a href="https://www.botframework.com/">Bot Framework</a> to register your bot. When you register it, remember to set your bot's endpoint to <pre>https://<i>your_bots_hostname</i>/api/messages</pre></p>
+
+<body>
+
+    <div class="container">
+
+        <div class="starter-template">
+            <h1>Harry Potter Response Bot</h1>
+            <p>This bot was created as a homework for <a href="https://events.techdays.ru/Cognitive-School/2016-09/schedule">Day#1 of Microsoft DevCon School "Cognitive Services"</a>.</p>
+            <p>Special features of this bot:</p>
+            <ul>
+                <li>Send your message to the Harry Potter Bot! It will respond with a morphologically similar phrase.<br />
+               <img src="Controllers/pic2.png" />
+                </li>
+                <li>The words for phases are taken from Harry Potter series.</li>
+                
+                <li>This bot understands emojis! Try sending :blush: or :heart: =)</li>
+                <img src="pic1.png" />
+            </ul>
+            <p>Disclaimers:</p>
+            <ul>
+                <li>I am not a C# specialist (usually I write in Python). Actually, this is my first working C# project. :blush: You can view my code in <a href="https://github.com/elmiram/HarryPotterBot">in my GitHub repo</a> and send me feedback about how bad it is D=</li>
+                <li>Well.. and since I'm not a c-sharper, I did all the books preprocessing in Python =D</li>
+                <li>This bot always surrouns punctuaton marks with spaces. ARGH</li>
+            </ul>
+            <p>Add the bot to Telegram: <a href="http://telegram.me/harrypotterresponsebot">@harrypotterresponsebot</a>.</p>
+        </div>
+
+    </div><!-- /.container -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
